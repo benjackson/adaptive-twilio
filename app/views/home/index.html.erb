@@ -1,4 +1,20 @@
-<h1>Adaptive Voicemail</h1>
-<p>Control your phoneability!</p>
-
-<%= render :partial => "users/shared/links" %>
+<header>
+	<span><i class="icon-volume-up"></i>AppName</span>
+	<ul>
+		<li><%= link_to "Login", new_user_session_path %></li>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+	</ul>
+</header>
+<section>
+	<h1>Voicemail by Email. Simple.</h1>
+	<ul class="benefits">
+		<li><i class="icon-phone"></i>You receive a voicemail.</li>
+		<li><i class="icon-magic"></i>We transcribe it.</li>
+		<li><i class="icon-inbox"></i>We send it to your inbox.</li>
+		<li><i class="icon-thumbs-up"></i>See, we said it was simple.</li>
+	</ul>
+	<ul class="options">
+		<li><%= link_to "Sign up to start making voicemail simpler", new_user_session_path, :class => "button" %></li>
+	</ul>
+	<p>Already got an account? <%= link_to "Login", new_user_session_path %></p>
+</section>

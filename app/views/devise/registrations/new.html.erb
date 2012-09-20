@@ -1,16 +1,23 @@
+<header>                                                                
+	<span><i class="icon-volume-up"></i>AppName</span>              
+	<ul>
+		<li><%= link_to "Login", new_user_session_path %></li>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+	</ul>                                                               
+</header>         
 <section>
-	<h2>Sign up</h2>
+	<h1>Sign up in seconds</h1>
 
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	  <%= devise_error_messages! %>
 
-	  <%= f.text_field :name, :html => { :placeholder_attribute => "First name" } %>
+	  <%= f.text_field :name, :placeholder => "First name" %>
 	  
-	  <%= f.email_field :email, :html => { :placeholder_attribute => "Email" } %>
+	  <%= f.email_field :email, :placeholder => "Email"  %>
 
-	  <%= f.password_field :password, :html => { :placeholder_attribute => "Password" } %>
+	  <%= f.password_field :password, :placeholder => "Password" %>
 
-	  <%= f.password_field :password_confirmation, :html => { :placeholder_attribute => "Confirm your password" } %>
+	  <%= f.password_field :password_confirmation, :placeholder => "Confirm your password" %>
 	  
 	  <%= f.check_box :marketing_opt_in %>
 
@@ -19,5 +26,5 @@
 	  <%= f.submit "Sign up", :class => "button" %>
 	<% end %>
 
-	<%= link_to "Login", new_user_session_path, :class => "button" %>
+	<p>I already have an account, take me to the <%= link_to "login page", new_user_session_path %>
 </section>
