@@ -17,7 +17,7 @@ AdaptiveTwilio::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
  
-  resources :photos, :only => [:show]
+  resources :calls, :only => [:show]
 
   # Sample resource route with options:
   #   resources :products do
