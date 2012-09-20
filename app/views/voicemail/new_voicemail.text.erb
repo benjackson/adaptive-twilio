@@ -1,6 +1,6 @@
 Hi <%= @user.name %>,
 
-At <%= @call.created_at %> today, someone ringing from <%= @call.caller_number %> left you a voicemail:
+At <%= @call.created_at %> today, someone ringing from <%= @call.caller_number %> left you a <%= @recording.duration %>s voicemail:
 
 "<%= @recording.message %>"
 

@@ -10,6 +10,6 @@ class Voicemail < ActionMailer::Base
     @user = call.user
     @call = call
     @recording = call.recording
-    mail to: "to@example.org", subject: "New voicemail!"
+    mail to: @user.email, subject: "Voicemail message from #{@call.caller_number}"
   end
 end
