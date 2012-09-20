@@ -1,9 +1,22 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<header>                                                                
+	<span><i class="icon-volume-up"></i>AppName</span>              
+	<ul>
+		<li>	
+    		<%= form_tag destroy_user_session_path, :method => :delete do %>
+      			<%= submit_tag "Logout" %>
+    		<% end %>
+		</li>
+	</ul>                                                               
+</header>         
+<section>
+	<h1>Dashboard#index</h1>
 
-<p>Your twilio number: <%= current_user.twilio_number %></p>
-<p>Your email address: <%= current_user.email %></p>
+	<p>Find me in app/views/dashboard/index.html.erb</p>
+	<p>Your twilio number: <%= current_user.twilio_number %></p>
+	<p>Your email address: <%= current_user.email %></p>
+	<p>It's as simple as that.  Blah blah blah.</p>
 
-<p>It's as simple as that.  Blah blah blah.</p>
-
-<%= render "users/shared/links" %>
+    <%= form_tag destroy_user_session_path, :method => :delete do %>
+      <%= submit_tag "Logout", :class => "button" %>
+    <% end %>
+</section>
