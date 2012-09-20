@@ -35,7 +35,7 @@ class CallsController < ApplicationController
     message = transcriptions[0].transcription_text if transcriptions.length > 0 
     duration = params['Duration']
     
-    Recording.create(sid: sid, call: call, url: url, message: message, duration: duration) 
+    Recording.create!(sid: sid, call: call, url: url, message: message, duration: duration) 
     render :text => "Hey there Twilio"
   end
 
