@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   validates :name, :presence => true
+
+  has_many :calls
 end

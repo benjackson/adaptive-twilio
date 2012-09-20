@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120920113237) do
+=======
+ActiveRecord::Schema.define(:version => 20120920144800) do
+
+  create_table "calls", :force => true do |t|
+    t.string   "sid"
+    t.string   "caller_number"
+    t.datetime "call_time"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+>>>>>>> Added call model and controller.
+
+  create_table "recordings", :force => true do |t|
+    t.string   "sid"
+    t.string   "url"
+    t.text     "message"
+    t.integer  "duration"
+    t.integer  "call_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
