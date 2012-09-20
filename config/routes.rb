@@ -1,4 +1,9 @@
 AdaptiveTwilio::Application.routes.draw do
+  get "dashboard", :controller => "dashboard", :action => "index"
+
+  # We'll use this later...
+  get "sign_up/step_2", :controller => "twilio_number", :action => "show"
+
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
   get "home/index"
