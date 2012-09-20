@@ -1,7 +1,7 @@
 class CallsController < ApplicationController
 
   def show
-    number = params[:number]
+    number = params[:id]
 
     # Caller logic should be place below
     response = Twilio::TwiML::Response.new do |r|
@@ -9,7 +9,7 @@ class CallsController < ApplicationController
       r.Record(timeout: 10, maxLength: 600, transcribe: true)
     end
 
-    return response.text
+    render :text => response.text
   end
 
 end
