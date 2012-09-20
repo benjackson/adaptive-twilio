@@ -30,7 +30,7 @@ class CallsController < ApplicationController
     sid = params['RecordingSid']
     call = Call.find_by_sid(params['CallSid']) 
     url = "#{params['RecordingUrl']}.mp3"
-    message = twilio_client.accounts.get(ENV['TWILIO_SID']).transcriptions.get(sid).transcription_text 
+    message = twilio_client.account.get(ENV['TWILIO_SID']).transcriptions.get(sid).transcription_text 
     duration = params['Duration']
     
     Recording.create(sid: sid, call: call, url: url, message: message, duration: duration) 
