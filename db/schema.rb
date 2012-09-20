@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920113237) do
+ActiveRecord::Schema.define(:version => 20120920143455) do
+
+  create_table "recordings", :force => true do |t|
+    t.string   "sid"
+    t.string   "url"
+    t.text     "message"
+    t.string   "caller_number"
+    t.datetime "call_time"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
