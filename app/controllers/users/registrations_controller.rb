@@ -25,10 +25,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
   def generate_twilio_number
     return ENV["TWILIO_NUMBER"] || "+44123456789" unless Rails.env.production?
-    numbers = twilio_client.available_phone_numbers.get('GB').local.list
+    account = twilio_client.account
+    numbers = account.available_phone_numbers.get('GB').local.list
     chosen_number = numbers.last.phone_number
     # Spend $1...
-    twilio_client.account.incoming_phone_numbers.create(:phone_number => chosen_number)
+    account.incoming_phone_numbers.create(:phone_number => chosen_number)
     resource.twilio_number = chosen_number
   end
 end
