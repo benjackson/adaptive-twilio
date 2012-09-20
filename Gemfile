@@ -5,9 +5,6 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -40,6 +37,7 @@ gem 'devise'
 # gem 'debugger'
 
 group :test do
+  gem 'debugger'
   gem 'mocha', :require => 'mocha_standalone'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -50,7 +48,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'debugger'
+  gem 'sqlite3'
 end
 
 group :production do
