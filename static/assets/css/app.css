@@ -86,7 +86,7 @@ input[type=password] {
 
 	ul.benefits {
 		margin: 0 auto 60px auto;
-		width: 380px;
+		width: 400px;
 	}
 	
 	ul.benefits li {
@@ -113,8 +113,11 @@ input[type=password] {
 	ul.options li a {
 		display: block;
 		text-align: center;
-		font-size: 20px;
 		border: none;
+	}
+	
+	ul.options li:last-child a {
+		font-size: 20px;
 	}
 
 /* Form */
