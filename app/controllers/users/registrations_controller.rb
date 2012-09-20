@@ -28,12 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     account = twilio_client.account
     numbers = account.available_phone_numbers.get('GB').local.list
     chosen_number = numbers.last.phone_number
-    # Spend $1...
-<<<<<<< HEAD
-    account.incoming_phone_numbers.create(:phone_number => chosen_number)
-=======
     twilio_client.account.incoming_phone_numbers.create(:phone_number => chosen_number, :voice_application_sid => 'AP63324d0b74e3e4b6995291deebc9723d')
->>>>>>> Added application sid to number creation.
     resource.twilio_number = chosen_number
   end
 end
