@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Signup - Smarter Voicemail</title>
+		<meta charset="utf-8">
+		<title>Signup - AppName</title>
+		<link href="../assets/css/font-awesome.css" rel="stylesheet">
+		<link href="../assets/css/override.css" rel="stylesheet"/>
 		<link href="../assets/css/app.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<h1>Signup</h1>
-		<form>
-			<input type="email" placeholder="someone@example.com"/>
-			<input type="password" placeholder="Enter a password"/>
-			<input type="text" placeholder="Your name"/>
-			<input type="submit" value="Signup"/>
-		</form>
-		<p>I already have an account, take me to the <a href="login.html">login page<a/></p>
+		<header>
+			<span><i class="icon-volume-up"></i>AppName</span>
+			<ul>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Signup</a></li>
+			</ul>
+		</header>
+		<section>
+			<h1>Signup in seconds</h1>
+			<form>
+				<input type="email" placeholder="someone@example.com"/>
+				<input type="password" placeholder="Enter a password"/>
+				<input type="text" placeholder="Your name"/>
+				<input type="submit" value="Signup" class="button"/>
+			</form>
+			<p>I already have an account, take me to the <a href="login.html">login page<a/></p>
+		</section>
 		<script src="../assets/javascripts/app.js"></script>
 	</body>
 </html>
