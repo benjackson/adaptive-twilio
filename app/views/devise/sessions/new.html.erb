@@ -1,17 +1,27 @@
-<h2>Sign in</h2>
+<header>                                                                
+	<span><i class="icon-volume-up"></i>AppName</span>              
+	<ul>
+		<li><%= link_to "Login", new_user_session_path %></li>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+	</ul>                                                               
+</header>         
+<section>
+	<h1>Login to your account</h1>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <%= f.email_field :email, :placeholder => "someone@example.com" %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+	  <%= f.password_field :password, :placeholder => "Password" %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+	  <% if devise_mapping.rememberable? -%>
+		<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  <% end -%>
 
-<%= render "devise/shared/links" %>
+	  <%= f.submit "Sign in", :class => "button" %>
+
+	<% end %>
+
+	<p>Opps, I don't have an account, take me to the <%= link_to "Sign up", new_user_registration_path %></p>
+
+</section>

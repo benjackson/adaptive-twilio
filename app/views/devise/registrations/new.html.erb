@@ -1,24 +1,32 @@
-<h2>Sign up</h2>
+<header>                                                                
+	<span><i class="icon-volume-up"></i>AppName</span>              
+	<ul>
+		<li><%= link_to "Login", new_user_session_path %></li>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+	</ul>                                                               
+</header>         
+<section>
+	<h1>Sign up in seconds</h1>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
-  
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+	  <%= f.text_field :name, :placeholder => "First name" %>
+	  
+	  <%= f.email_field :email, :placeholder => "Email"  %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	  <%= f.text_field :phone_number, :placeholder => "Your phone number (e.g. 442071234567)"  %>
+	  
+	  <%= f.password_field :password, :placeholder => "Password" %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-  
-  <div><%= f.label :marketing_opt_in, "Click here to be spammed relentlessly:" %><br />
-  <%= f.check_box :marketing_opt_in %></div>
+	  <%= f.password_field :password_confirmation, :placeholder => "Confirm your password" %>
+	  
+	  <%= f.check_box :marketing_opt_in %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+	  <%= f.label :marketing_opt_in, "Let me know when you add new features (no marketing fluff - honest)" %>
 
-<%= render "devise/shared/links" %>
+	  <%= f.submit "Sign up", :class => "button" %>
+	<% end %>
+
+	<p>I already have an account, take me to the <%= link_to "login page", new_user_session_path %>
+</section>
