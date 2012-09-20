@@ -19,7 +19,7 @@ body > section {
 	
 /* Buttons */
 
-		button {
+		.button {
 			border: none;
 			background: #6776d2;
 			color: #fff;
@@ -30,8 +30,8 @@ body > section {
 			cursor: pointer;
 		}
 		
-		button:hover,
-		button:focus {
+		.button:hover,
+		.button:focus {
 				background: #303030;
 		}
 
