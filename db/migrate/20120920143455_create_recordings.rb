@@ -4,9 +4,8 @@ class CreateRecordings < ActiveRecord::Migration
       t.string :sid
       t.string :url
       t.text :message
-      t.string :caller_number
-      t.datetime :call_time
-      t.references :user
+      t.integer :duration
+      t.references :call
 
       t.timestamps
     end
