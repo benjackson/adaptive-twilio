@@ -1,7 +1,7 @@
 Hi <%= @user.name %>,
 
-You received a new voicemail from <%= @recording.caller_number %> at <%= @recording.created_at %>:
+At <%= @call.created_at %> today, someone ringing from <%= @call.caller_number %> left you a voicemail:
 
-<%= @recording.message %>
+"<%= @recording.message %>"
 
-Ta
+Hope it was good news!

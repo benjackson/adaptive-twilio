@@ -2,9 +2,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource
-    generate_twilio_number
-
-    if resource.save
+    
+    if resource.valid?
+      # Spend $1...
+      generate_twilio_number
+      
+      resource.save
+      
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)
@@ -22,6 +26,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   private
   def generate_twilio_number
-    resource.twilio_number = "1234"
+    numbers = twilio_client.available_phone_numbers.get('GB').local.list
+    chosen_number = numbers.last.phone_number
+    twilio_client.account.incoming_phone_numbers.create(:phone_number => chosen_number)
+    resource.twilio_number = chosen_number
   end
 end

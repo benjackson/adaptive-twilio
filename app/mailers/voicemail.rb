@@ -6,9 +6,10 @@ class Voicemail < ActionMailer::Base
   #
   #   en.voicemail.new_voicemail.subject
   #
-  def new_voicemail_email(recording)
-    @user = recording.user
-    @recording = recording
+  def new_voicemail_email(call)
+    @user = call.user
+    @call = call
+    @recording = call.recording
     mail to: "to@example.org", subject: "New voicemail!"
   end
 end
