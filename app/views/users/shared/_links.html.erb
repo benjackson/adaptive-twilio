@@ -1,0 +1,10 @@
+<% if current_user %>
+  <div>
+    <%= form_tag destroy_user_session_path, :method => :delete do %>
+      <%= submit_tag "Logout" %>
+    <% end %>
+  </div>
+<% else %>
+  <div><%= link_to "Sign in", new_user_session_path %></div>
+  <div><%= link_to "Sign up", new_user_registration_path %></div>
+<% end %>
