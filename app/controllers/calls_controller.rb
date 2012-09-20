@@ -18,7 +18,7 @@ class CallsController < ApplicationController
       vm = "The person you're calling can't answer the phone. Leave a message and they'll get back to you."
       r.Say(vm, voice: 'woman')
       r.Record(timeout: 10, maxLength: 600, transcribe: true, action: 'http://adaptive-twilio.herokuapp.com/recordings')
-      c = Call.create(sid: call_sid, caller_number: caller_number, call_time: call_time)
+      c = Call.create(sid: sid, caller_number: caller_number, call_time: call_time)
       c.user = user
       c.save
     end
