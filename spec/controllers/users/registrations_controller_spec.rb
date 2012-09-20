@@ -7,6 +7,8 @@ describe Users::RegistrationsController do
       post :create, :user => { :name => "Ben", :password => "tester", :password_confirmation => "tester", :email => "test@example.com" }
     end
     
+    it { should redirect_to step_2_path } 
+    
     it "should generate a twilio number" do
       User.first.twilio_number.should_not be_blank
     end
