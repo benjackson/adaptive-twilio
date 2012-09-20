@@ -6,7 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if resource.valid?
       # Spend $1...
       generate_twilio_number
-      
       resource.save
       
       if resource.active_for_authentication?
