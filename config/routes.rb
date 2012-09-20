@@ -22,7 +22,10 @@ AdaptiveTwilio::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
  
-  resources :calls, :only => [:show]
+  #resource :calls, :only => [:show]
+
+  match 'calls' => 'calls#twilio_response'
+  match 'recordings' => 'calls#twilio_record'
 
   # Sample resource route with options:
   #   resources :products do

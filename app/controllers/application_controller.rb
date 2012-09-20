@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
     @client = @client || Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILIO_TOKEN'])
     return @client
   end
+  
 end
