@@ -39,12 +39,18 @@ gem 'devise'
 # To use debugger
 # gem 'debugger'
 
+group :test do
+  gem 'mocha', :require => 'mocha_standalone'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+end
+
 group :development do
   gem 'heroku'
 end
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'debugger'
 end
 
 group :production do
