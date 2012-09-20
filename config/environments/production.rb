@@ -69,4 +69,18 @@ AdaptiveTwilio::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
   config.action_mailer.default_url_options = { :host => 'adaptive-twilio.herokuapp.com' }
+  
+  # Using Mailgun on Heroku we can send 200 msgs a day for free.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_charset = "utf-8"
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+       :authentication => :plain,
+       :address => ENV['MAILGUN_SMTP_SERVER'],
+       :port => ENV['MAILGUN_SMTP_PORT'],
+       :domain => "adaptive-twilio.herokuapp.com",
+       :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+       :password => ENV['MAILGUN_SMTP_PASSWORD']
+  }
 end
